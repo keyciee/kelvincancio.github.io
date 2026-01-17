@@ -6,14 +6,311 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Kelvin Charles N. Cancio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            padding-right: 200px;
+        }
+
+        /* Vertical Navigation */
+        .vertical-nav {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 200px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 20px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            padding: 30px 0;
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            margin: 0 auto 40px;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 0;
+        }
+
+        .nav-links a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 25px;
+            color: #4b5563;
+            text-decoration: none;
+            transition: all 0.3s;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-links a:hover {
+            background: #f9fafb;
+            color: #dc2626;
+            border-left-color: #dc2626;
+        }
+
+        .nav-links a.active {
+            background: #fee2e2;
+            color: #dc2626;
+            border-left-color: #dc2626;
+            font-weight: 600;
+        }
+
+        .nav-links a i {
+            font-size: 1.2em;
+            width: 24px;
+            text-align: center;
+        }
+
+        .nav-links a span {
+            font-size: 0.95em;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding-right: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #dc2626;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #dc2626;
+            padding-bottom: 10px;
+        }
+
+        .experience-item {
+            margin-bottom: 35px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .exp-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .exp-description {
+            color: #555;
+            margin-top: 10px;
+            line-height: 1.7;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .tech-tag {
+            background: #fee2e2;
+            color: #dc2626;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 10px;
+            color: #dc2626;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+            gap: 10px;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        /* Games Container */
+        .games-container {
+            display: flex;
+            gap: 30px;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .game-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-box h3 {
+            color: #dc2626;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .game-frame {
+            height: 600px; /* Add this line */
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            body {
+                padding-right: 0;
+                padding-bottom: 80px;
+            }
+
+            .vertical-nav {
+                width: 100%;
+                height: auto;
+                bottom: 0;
+                top: auto;
+                flex-direction: row;
+                padding: 0;
+                box-shadow: 0 -5px 20px rgba(0,0,0,0.08);
+            }
+
+            .nav-brand {
+                display: none;
+            }
+
+            .nav-links {
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+            }
+
+            .nav-links li {
+                flex: 1;
+            }
+
+            .nav-links a {
+                flex-direction: column;
+                gap: 5px;
+                padding: 15px 10px;
+                text-align: center;
+                border-left: none;
+                border-top: 3px solid transparent;
+            }
+
+            .nav-links a:hover,
+            .nav-links a.active {
+                border-left-color: transparent;
+                border-top-color: #dc2626;
+            }
+
+            .nav-links a i {
+                font-size: 1.3em;
+            }
+
+            .nav-links a span {
+                font-size: 0.75em;
+            }
+
+            .main-content {
+                padding-right: 0;
+            }
+
+            .games-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 25px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .games-container {
+                padding: 25px;
+            }
+
+            #snakeFrame {
+                height: 600px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Vertical Navigation -->
     <nav class="vertical-nav">
         <div class="nav-brand">KC</div>
         <ul class="nav-links">
-            <li><a href="index.html"class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
+            <li><a href="index.html" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
             <li><a href="about.html"><i class="fas fa-user"></i> <span>About</span></a></li>
             <li><a href="projects.html"><i class="fas fa-code"></i> <span>Projects</span></a></li>
             <li><a href="certifications.html"><i class="fas fa-certificate"></i> <span>Certifications</span></a></li>
@@ -27,29 +324,150 @@
                 <h2>Kelvin Charles Cancio</h2>
                 <div class="about-content">
                     <img src="kcprofile.jpg" alt="Profile Picture" class="profile-pic">
-                    <p>I’m an Information Technology specialized in Cybersecurity student with a growing interest in cybersecurity. I enjoy building interactive experiences through games while also learning how systems work behind the scenes—and how to protect them. I like mixing creativity with logic, whether that’s designing gameplay mechanics or understanding how security vulnerabilities happen.</p>
+                    <p>I'm an Information Technology specialized in Cybersecurity student with a growing interest in cybersecurity. I enjoy building interactive experiences through games while also learning how systems work behind the scenes—and how to protect them. I like mixing creativity with logic, whether that's designing gameplay mechanics or understanding how security vulnerabilities happen.</p>
                     
                     <h3 style="color: #dc2626; margin-top: 30px; margin-bottom: 15px;">My Journey</h3>
-                    <p>I started my academic path in Game Development, where I learned the fundamentals of programming, game logic, and problem-solving. Along the way, I became curious about how games, networks, and systems can be exploited or secured. This curiosity pushed me to explore cybersecurity through broad learning platforms such as Hack The Box, where I’m currently following the Junior Cybersecurity Path, and Cisco Networking Academy, where I’m building a strong foundation in networking and security concepts.</p>
+                    <p>I started my academic path in Game Development, where I learned the fundamentals of programming, game logic, and problem-solving. Along the way, I became curious about how games, networks, and systems can be exploited or secured. This curiosity pushed me to explore cybersecurity through broad learning platforms such as Hack The Box, where I'm currently following the Junior Cybersecurity Path, and Cisco Networking Academy, where I'm building a strong foundation in networking and security concepts.</p>
                     
                     <h3 style="color: #dc2626; margin-top: 30px; margin-bottom: 15px;">Skills & Expertise</h3>
-<ul class="skills-list">
-    <li>Game development fundamentals and gameplay logic</li>
-    <li>Programming and structured problem-solving</li>
-    <li>Basic cybersecurity concepts and threat awareness</li>
-    <li>Hands-on security labs from Hack The Box (Junior level)</li>
-    <li>Networking and security fundamentals from Cisco Networking Academy</li>
-    <li>Strong analytical thinking and continuous self-learning mindset</li>
-</ul>
+                    <ul class="skills-list">
+                        <li>Game development fundamentals and gameplay logic</li>
+                        <li>Programming and structured problem-solving</li>
+                        <li>Basic cybersecurity concepts and threat awareness</li>
+                        <li>Hands-on security labs from Hack The Box (Junior level)</li>
+                        <li>Networking and security fundamentals from Cisco Networking Academy</li>
+                        <li>Strong analytical thinking and continuous self-learning mindset</li>
+                    </ul>
                     
                     <h3 style="color: #dc2626; margin-top: 30px; margin-bottom: 15px;">Future Goals</h3>
                     <p>My goal is to grow as both a game developer and a cybersecurity professional. I aim to deepen my understanding of secure system design, network security, and ethical hacking while continuing to improve my game development skills. In the future, I hope to work on projects that combine secure systems with interactive technology—or pursue a career where creativity and cybersecurity intersect.</p>
                 </div>
             </section>
+
+            <!-- Games Section -->
+            <div class="games-container">
+                <div class="game-box">
+                    <h3>🐍 Snake Game</h3>
+                    <iframe id="snakeFrame" class="game-frame" srcdoc='<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #2c3e50; font-family: Arial, sans-serif; padding: 10px; }
+        .game-container { text-align: center; max-width: 100%; }
+        h1 { color: #9bbc0f; margin-bottom: 20px; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+        .score-board { background-color: #0f380f; color: #9bbc0f; padding: 10px 20px; margin-bottom: 10px; border-radius: 5px; font-size: 1.2em; font-weight: bold; }
+        canvas { background-color: #9bbc0f; border: 8px solid #0f380f; border-radius: 5px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); max-width: 100%; height: auto; }
+        .mobile-controls { margin-top: 20px; display: grid; grid-template-columns: repeat(3, 80px); grid-template-rows: repeat(3, 80px); gap: 10px; justify-content: center; }
+        .control-btn { background-color: #0f380f; color: #9bbc0f; border: 3px solid #9bbc0f; border-radius: 10px; font-size: 2em; font-weight: bold; cursor: pointer; transition: all 0.1s; user-select: none; -webkit-tap-highlight-color: transparent; display: flex; align-items: center; justify-content: center; }
+        .control-btn:active { background-color: #9bbc0f; color: #0f380f; transform: scale(0.95); }
+        .control-btn.up { grid-column: 2; grid-row: 1; }
+        .control-btn.left { grid-column: 1; grid-row: 2; }
+        .control-btn.center { grid-column: 2; grid-row: 2; background-color: #306230; border-color: #0f380f; font-size: 1em; cursor: default; }
+        .control-btn.right { grid-column: 3; grid-row: 2; }
+        .control-btn.down { grid-column: 2; grid-row: 3; }
+        #gameOverScreen { position: absolute; display: none; flex-direction: column; justify-content: center; align-items: center; background-color: rgba(15, 56, 15, 0.9); color: #9bbc0f; border-radius: 10px; padding: 40px; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; }
+        #gameOverScreen.show { display: flex; }
+        #gameOverScreen h2 { font-size: 3em; margin-bottom: 20px; }
+        #gameOverScreen p { font-size: 1.5em; margin: 10px 0; }
+        .restart-btn { background-color: #9bbc0f; color: #0f380f; border: none; padding: 15px 30px; font-size: 1.2em; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 20px; transition: transform 0.2s; }
+        .restart-btn:hover { transform: scale(1.1); }
+        .restart-btn:active { transform: scale(0.95); }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🐍 SNAKE</h1>
+        <div class="score-board">Score: <span id="score">0</span></div>
+        <div style="position: relative;">
+            <canvas id="gameCanvas" width="500" height="500"></canvas>
+            <div id="gameOverScreen">
+                <h2>GAME OVER!</h2>
+                <p>Final Score: <span id="finalScore">0</span></p>
+                <button class="restart-btn" onclick="restartGame()">PLAY AGAIN</button>
+            </div>
+        </div>
+        <div class="mobile-controls">
+            <button class="control-btn up" id="btnUp">▲</button>
+            <button class="control-btn left" id="btnLeft">◄</button>
+            <div class="control-btn center">🐍</div>
+            <button class="control-btn right" id="btnRight">►</button>
+            <button class="control-btn down" id="btnDown">▼</button>
+        </div>
+    </div>
+    <script>
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+        const scoreElement = document.getElementById("score");
+        const finalScoreElement = document.getElementById("finalScore");
+        const gameOverScreen = document.getElementById("gameOverScreen");
+        const TILE_SIZE = 20, GRID_WIDTH = 25, GRID_HEIGHT = 25, GAME_SPEED = 100;
+        let snake = [], food = {}, direction = "RIGHT", nextDirection = "RIGHT", running = false, gameOver = false, score = 0, gameLoop = null;
+        function init() { canvas.width = GRID_WIDTH * TILE_SIZE; canvas.height = GRID_HEIGHT * TILE_SIZE; setupMobileControls(); startGame(); }
+        function setupMobileControls() {
+            const btnUp = document.getElementById("btnUp"), btnDown = document.getElementById("btnDown"), btnLeft = document.getElementById("btnLeft"), btnRight = document.getElementById("btnRight");
+            [btnUp, btnDown, btnLeft, btnRight].forEach(btn => btn.addEventListener("touchstart", (e) => e.preventDefault()));
+            btnUp.addEventListener("click", () => { if (running && direction !== "DOWN") nextDirection = "UP"; });
+            btnDown.addEventListener("click", () => { if (running && direction !== "UP") nextDirection = "DOWN"; });
+            btnLeft.addEventListener("click", () => { if (running && direction !== "RIGHT") nextDirection = "LEFT"; });
+            btnRight.addEventListener("click", () => { if (running && direction !== "LEFT") nextDirection = "RIGHT"; });
+            btnUp.addEventListener("touchstart", () => { if (running && direction !== "DOWN") nextDirection = "UP"; });
+            btnDown.addEventListener("touchstart", () => { if (running && direction !== "UP") nextDirection = "DOWN"; });
+            btnLeft.addEventListener("touchstart", () => { if (running && direction !== "RIGHT") nextDirection = "LEFT"; });
+            btnRight.addEventListener("touchstart", () => { if (running && direction !== "LEFT") nextDirection = "RIGHT"; });
+        }
+        function startGame() {
+            snake = [{ x: 5, y: 5 }, { x: 4, y: 5 }, { x: 3, y: 5 }]; direction = "RIGHT"; nextDirection = "RIGHT"; score = 0; gameOver = false; running = true;
+            updateScore(); gameOverScreen.classList.remove("show"); spawnFood();
+            if (gameLoop) clearInterval(gameLoop); gameLoop = setInterval(update, GAME_SPEED);
+        }
+        function spawnFood() {
+            let validPosition = false;
+            while (!validPosition) { food = { x: Math.floor(Math.random() * GRID_WIDTH), y: Math.floor(Math.random() * GRID_HEIGHT) }; validPosition = !snake.some(segment => segment.x === food.x && segment.y === food.y); }
+        }
+        function update() {
+            if (!running) return; direction = nextDirection; const head = { ...snake[0] };
+            switch (direction) { case "UP": head.y--; break; case "DOWN": head.y++; break; case "LEFT": head.x--; break; case "RIGHT": head.x++; break; }
+            if (head.x < 0 || head.x >= GRID_WIDTH || head.y < 0 || head.y >= GRID_HEIGHT) { endGame(); return; }
+            if (snake.some(segment => segment.x === head.x && segment.y === head.y)) { endGame(); return; }
+            snake.unshift(head);
+            if (head.x === food.x && head.y === food.y) { score += 10; updateScore(); spawnFood(); } else { snake.pop(); }
+            draw();
+        }
+        function draw() {
+            ctx.fillStyle = "#9bbc0f"; ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#306230"; ctx.fillRect(food.x * TILE_SIZE, food.y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+            snake.forEach((segment, index) => { ctx.fillStyle = index === 0 ? "#0f380f" : "#306230"; ctx.fillRect(segment.x * TILE_SIZE, segment.y * TILE_SIZE, TILE_SIZE, TILE_SIZE); });
+        }
+        function endGame() { running = false; gameOver = true; clearInterval(gameLoop); finalScoreElement.textContent = score; gameOverScreen.classList.add("show"); }
+        function updateScore() { scoreElement.textContent = score; }
+        function restartGame() { startGame(); }
+        document.addEventListener("keydown", (e) => {
+            if (gameOver && e.code === "Space") { restartGame(); return; }
+            if (!running) return;
+            switch (e.key) {
+                case "ArrowUp": case "w": case "W": if (direction !== "DOWN") nextDirection = "UP"; e.preventDefault(); break;
+                case "ArrowDown": case "s": case "S": if (direction !== "UP") nextDirection = "DOWN"; e.preventDefault(); break;
+                case "ArrowLeft": case "a": case "A": if (direction !== "RIGHT") nextDirection = "LEFT"; e.preventDefault(); break;
+                case "ArrowRight": case "d": case "D": if (direction !== "LEFT") nextDirection = "RIGHT"; e.preventDefault(); break;
+            }
+        });
+        init();
+    </script>
+</body>
+</html>'></iframe>
+                </div>
+
+                <div class="game-box">
+                    <h3>🎆 Fireworks Display</h3>
+                    <iframe id="fireworksFrame" class="game-frame" src="fireworks.html"></iframe>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="js.js"></script>
+    
 </body>
-
 </html>
