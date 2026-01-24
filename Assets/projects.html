@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Kelvin Charles N. Cancio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- Vertical Navigation -->
+    <nav class="vertical-nav">
+        <div class="nav-brand">KC</div>
+        <ul class="nav-links">
+            <li><a href="../index.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
+            <li><a href="about.html"><i class="fas fa-user"></i> <span>About</span></a></li>
+            <li><a href="projects.html" class="active"><i class="fas fa-code"></i> <span>Projects</span></a></li>
+            <li><a href="certifications.html"><i class="fas fa-certificate"></i> <span>Certifications</span></a></li>
+            <li><a href="activities.html"><i class="fas fa-trophy"></i> <span>Activities</span></a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <div class="container">
+            <section id="projects">
+                <h2>Featured Projects</h2>
+                
+                <div class="experience-item">
+                    <div class="exp-title">Grade Calculator</div>
+                    <div class="exp-description">
+                        Built a web-based grade calculator that allows users to input scores and automatically compute final grades based on predefined criteria. Designed to be simple, accurate, and user-friendly, helping students quickly evaluate their academic performance.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        View Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-title">2D Head Soccer Game</div>
+                    <div class="exp-description">
+                        Developed a 2D arcade-style head soccer game featuring physics-based movement, collision detection, and simple AI opponents. Focused on responsive controls and fast-paced gameplay to create an engaging and replayable experience.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Javascript</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">Game Physics</span>
+                        <span class="tech-tag">2D Game Development</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        View Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-title">Password Strength Checker & Generator</div>
+                    <div class="exp-description">
+                        Built a web-based application that evaluates password strength using multiple criteria and generates cryptographically secure passwords. Features include entropy calculation, dictionary attack simulation, and customizable password generation parameters.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Cryptography</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        View Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </section>
+
+            <section id="prime-game">
+                <h2>🎮 Prime Number Challenge</h2>
+                <p style="text-align: center; color: #6b7280; margin-bottom: 20px;">A two-player game where you race to find prime numbers!</p>
+                
+                <div id="game-container">
+                    <div id="game-setup">
+                        <div style="background: #f9fafb; padding: 30px; border-radius: 10px; text-align: center;">
+                            <h3 style="color: #333; margin-bottom: 20px;">Game Setup</h3>
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; color: #555;">Player 1 Name:</label>
+                                <input type="text" id="player1-name" placeholder="Enter name" style="padding: 10px; border: 2px solid #e5e7eb; border-radius: 6px; width: 250px; font-size: 1em;">
+                            </div>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 5px; color: #555;">Player 2 Name:</label>
+                                <input type="text" id="player2-name" placeholder="Enter name" style="padding: 10px; border: 2px solid #e5e7eb; border-radius: 6px; width: 250px; font-size: 1em;">
+                            </div>
+                            <button onclick="startGame()" style="padding: 12px 30px; background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); color: white; border: none; border-radius: 6px; font-size: 1.1em; font-weight: 500; cursor: pointer; transition: all 0.3s;">
+                                Start Game
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="game-play" style="display: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; flex-wrap: wrap; gap: 15px;">
+                            <div id="player1-info" style="flex: 1; background: #fee2e2; padding: 15px; border-radius: 8px; min-width: 200px; transition: all 0.3s;">
+                                <div style="font-weight: bold; color: #dc2626; margin-bottom: 5px;">Player 1</div>
+                                <div style="font-size: 1.5em; font-weight: bold; color: #333;">Score: <span id="player1-score">0</span></div>
+                            </div>
+                            
+                            <div style="text-align: center;">
+                                <div style="font-size: 2.5em; font-weight: bold; color: #dc2626; margin-bottom: 5px;">
+                                    <span id="timer">30</span>s
+                                </div>
+                                <div id="current-turn" style="font-size: 1.1em; color: #555; font-weight: 500;">Player 1's Turn</div>
+                            </div>
+
+                            <div id="player2-info" style="flex: 1; background: #dbeafe; padding: 15px; border-radius: 8px; min-width: 200px; transition: all 0.3s;">
+                                <div style="font-weight: bold; color: #2563eb; margin-bottom: 5px;">Player 2</div>
+                                <div style="font-size: 1.5em; font-weight: bold; color: #333;">Score: <span id="player2-score">0</span></div>
+                            </div>
+                        </div>
+
+                        <div id="number-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 20px;">
+                            <!-- Numbers will be generated here -->
+                        </div>
+
+                        <div style="text-align: center;">
+                            <button onclick="resetGame()" style="padding: 10px 25px; background: #6b7280; color: white; border: none; border-radius: 6px; font-weight: 500; cursor: pointer;">
+                                Reset Game
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="game-over" style="display: none;">
+                        <div style="background: #f9fafb; padding: 40px; border-radius: 10px; text-align: center;">
+                            <h3 style="color: #333; font-size: 2em; margin-bottom: 20px;">🎉 Game Over!</h3>
+                            <div id="winner-announcement" style="font-size: 1.5em; color: #dc2626; font-weight: bold; margin-bottom: 30px;"></div>
+                            <div style="margin-bottom: 30px;">
+                                <div style="margin-bottom: 10px; font-size: 1.2em;">
+                                    <span id="final-player1-name"></span>: <span id="final-player1-score" style="font-weight: bold; color: #dc2626;"></span> points
+                                </div>
+                                <div style="font-size: 1.2em;">
+                                    <span id="final-player2-name"></span>: <span id="final-player2-score" style="font-weight: bold; color: #2563eb;"></span> points
+                                </div>
+                            </div>
+                            <button onclick="resetGame()" style="padding: 12px 30px; background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); color: white; border: none; border-radius: 6px; font-size: 1.1em; font-weight: 500; cursor: pointer;">
+                                Play Again
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    
+    <script src="js.js"></script>
+</body>
+</html>
